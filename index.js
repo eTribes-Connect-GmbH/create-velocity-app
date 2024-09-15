@@ -20,6 +20,7 @@ const program = new Command(packageJson.name)
   .option('--eslint', 'Initialize with ESLint config. (default)')
   .option('--prettier', 'Initialize with Prettier config. (default)')
   .option('--i18n', 'Initialize with i18n setup. (default, disabling not yet implemented)')
+  .option('--basic-auth', 'Initialize with Basic Auth setup. (default, disabling not yet implemented)')
   .option(
     '--openid-connect',
     'Initialize with OpenID Connect demo integration. (default, disabling not yet implemented)'
@@ -43,6 +44,7 @@ const defaultOptions = {
   eslint: true,
   prettier: true,
   i18n: true,
+  basicAuth: true,
   openidConnect: true,
   // importAlias: '@/*',
   // empty: false,
@@ -113,6 +115,14 @@ if (customOptions.yes && customOptions.projectDirectory) {
         name: 'i18n',
         message: `Would you like to include the ${colors.blue('i18n')} setup? (disabling not yet implemented)`,
         initial: defaultOptions.i18n,
+        active: 'Yes',
+        inactive: 'No'
+      },
+      {
+        type: customOptions.basicAuth === undefined ? 'toggle' : null,
+        name: 'basicAuth',
+        message: `Would you like to include the ${colors.blue('Basic Auth')} setup? (disabling not yet implemented)`,
+        initial: defaultOptions.basicAuth,
         active: 'Yes',
         inactive: 'No'
       },

@@ -34,6 +34,7 @@ Options:
   --eslint          Initialize with ESLint config. (default)
   --prettier        Initialize with Prettier config. (default)
   --i18n            Initialize with i18n setup. (default, disabling not yet implemented)
+  --basic-auth      Initialize with Basic Auth setup. (default, disabling not yet implemented)
   --openid-connect  Initialize with OpenID Connect demo integration. (default, disabling not yet implemented)
   --use-npm         Explicitly tell the CLI to bootstrap the application using npm.
   --use-pnpm        Explicitly tell the CLI to bootstrap the application using pnpm.

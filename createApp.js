@@ -49,8 +49,10 @@ const createApp = async config => {
     await runCommandInDir(config.projectDirectory, `${config.packageManager} install`);
   }
 
-  // Initialize Git
-  if (!config.disableGit) {
+  // Git
+  if (config.disableGit) {
+    await deleteFile(join(config.projectDirectory, '.gitignore'));
+  } else {
     await runCommandInDir(config.projectDirectory, 'git init');
   }
 
