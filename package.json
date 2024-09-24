@@ -1,6 +1,6 @@
 {
   "name": "create-velocity-app",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "license": "UNLICENSED",
   "type": "module",
   "main": "index.js",

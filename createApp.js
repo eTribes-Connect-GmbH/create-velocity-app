@@ -17,11 +17,14 @@ const createApp = async (config) => {
   // Download template/boilerplate
   console.log("Downloading project template...");
   try {
-    const emitter = degit("gitlab:etribes/velocity-boilerplate", {
-      cache: false,
-      force: true,
-      verbose: true,
-    });
+    const emitter = degit(
+      "https://github.com/eTribes-Connect-GmbH/velocity-core.git",
+      {
+        cache: false,
+        force: true,
+        verbose: true,
+      },
+    );
     await emitter.clone(config.projectDirectory);
   } catch {
     console.log(
@@ -37,7 +40,11 @@ const createApp = async (config) => {
   );
   const packageJson = JSON.parse(packageJsonText);
   packageJson.name = config.appName;
-  await writeFile(path, JSON.stringify(packageJson, null, 2), "utf-8");
+  await writeFile(
+    join(config.projectDirectory, "package.json"),
+    JSON.stringify(packageJson, null, 2),
+    "utf-8",
+  );
 
   // ESLint
   if (!config.eslint) {
