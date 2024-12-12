@@ -23,7 +23,7 @@ const createApp = async config => {
   const packageJsonText = await readFile(join(config.projectDirectory, 'package.json'), 'utf-8');
   const packageJson = JSON.parse(packageJsonText);
   packageJson.name = config.appName;
-  await writeFile(path, JSON.stringify(packageJson, null, 2), 'utf-8');
+  await writeFile(join(config.projectDirectory, 'package.json'), JSON.stringify(packageJson, null, 2), 'utf-8');
 
   // ESLint
   if (!config.eslint) {
