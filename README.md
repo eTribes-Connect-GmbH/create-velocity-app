@@ -2,7 +2,7 @@
 
 The easiest way to get started with Velocity!
 
-This CLI tool enables the fast and easy creation of a new Velocity app based on the [Velocity Boilerplate](https://gitlab.com/etribes/velocity-boilerplate).
+This CLI tool enables the fast and easy creation of a new Velocity app based on the [Velocity Boilerplate](https://github.com/etribes-connect-gmbh/velocity-core).
 
 To get started, use the following command:
 
@@ -33,6 +33,7 @@ Options:
   -v, --version     Output the current version of create-velocity-app.
   --eslint          Initialize with ESLint config. (default)
   --prettier        Initialize with Prettier config. (default)
+  --docker          Initialize with Docker config. (default)
   --i18n            Initialize with i18n setup. (default, disabling not yet implemented)
   --basic-auth      Initialize with Basic Auth setup. (default, disabling not yet implemented)
   --openid-connect  Initialize with OpenID Connect demo integration. (default, disabling not yet implemented)
