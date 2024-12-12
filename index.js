@@ -26,8 +26,6 @@ const program = new Command(packageJson.name)
   .option('--docker', 'Initialize with Docker config. (default)')
   .option('--i18n', 'Initialize with i18n setup. (default, disabling not yet implemented)')
   .option('--basic-auth', 'Initialize with Basic Auth setup. (default, disabling not yet implemented)')
-  .option('--i18n', 'Initialize with i18n setup. (default, disabling not yet implemented)')
-  .option('--basic-auth', 'Initialize with Basic Auth setup. (default, disabling not yet implemented)')
   .option(
     '--openid-connect',
     'Initialize with OpenID Connect demo integration. (default, disabling not yet implemented)'
