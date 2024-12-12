@@ -12,7 +12,7 @@ const createApp = async config => {
   // Download template/boilerplate
   console.log('Downloading project template...');
   try {
-    const emitter = degit('gitlab:etribes/velocity-boilerplate', { cache: false, force: true, verbose: true });
+    const emitter = degit('github:etribes-connect-gmbh/velocity-core', { cache: false, force: true, verbose: true });
     await emitter.clone(config.projectDirectory);
   } catch {
     console.log(`${colors.red('Error!')} We were unable to download the project template.`);
@@ -27,14 +27,20 @@ const createApp = async config => {
 
   // ESLint
   if (!config.eslint) {
-    await deleteFile(join(config.projectDirectory, '.eslintrc'));
-    // TODO: Remove dependency
+    await deleteFile(join(config.projectDirectory, 'eslint.config.js'));
+    // TODO: Remove dependencies
   }
 
   // Prettier
   if (!config.prettier) {
-    await deleteFile(join(config.projectDirectory, '.prettierrc'));
+    await deleteFile(join(config.projectDirectory, 'prettier.config.js'));
     // TODO: Remove dependency
+  }
+
+  // Docker
+  if (!config.docker) {
+    await deleteFile(join(config.projectDirectory, 'Dockerfile'));
+    await deleteFile(join(config.projectDirectory, '.dockerignore'));
   }
 
   // Create local .env

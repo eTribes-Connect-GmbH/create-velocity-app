@@ -19,6 +19,7 @@ const program = new Command(packageJson.name)
   // .option('--tailwind', 'Initialize with Tailwind CSS config. (default)')
   .option('--eslint', 'Initialize with ESLint config. (default)')
   .option('--prettier', 'Initialize with Prettier config. (default)')
+  .option('--docker', 'Initialize with Docker config. (default)')
   .option('--i18n', 'Initialize with i18n setup. (default, disabling not yet implemented)')
   .option('--basic-auth', 'Initialize with Basic Auth setup. (default, disabling not yet implemented)')
   .option(
@@ -43,6 +44,7 @@ const defaultOptions = {
   // tailwind: true,
   eslint: true,
   prettier: true,
+  docker: true,
   i18n: true,
   basicAuth: true,
   openidConnect: true,
@@ -107,6 +109,14 @@ if (customOptions.yes && customOptions.projectDirectory) {
         name: 'prettier',
         message: `Would you like to use ${colors.blue('Prettier')}?`,
         initial: defaultOptions.prettier,
+        active: 'Yes',
+        inactive: 'No'
+      },
+      {
+        type: customOptions.docker === undefined ? 'toggle' : null,
+        name: 'docker',
+        message: `Would you like to use ${colors.blue('Docker')}?`,
+        initial: defaultOptions.docker,
         active: 'Yes',
         inactive: 'No'
       },

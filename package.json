@@ -1,6 +1,6 @@
 {
   "name": "create-velocity-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "UNLICENSED",
   "type": "module",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "dependencies": {
     "commander": "12.1.0",
     "degit": "2.8.4",
-    "picocolors": "1.1.0",
+    "picocolors": "1.1.1",
     "prompts": "2.4.2"
   }
 }
