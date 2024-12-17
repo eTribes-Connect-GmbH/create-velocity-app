@@ -2,16 +2,12 @@
 
 import { Command } from 'commander';
 import { readFile } from 'node:fs/promises';
-import { dirname } from 'path';
 import colors from 'picocolors';
 import prompts from 'prompts';
-import { fileURLToPath } from 'url';
 import createApp from './createApp.js';
 import getPkgManager from './helpers/getPkgManager.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const packageJson = JSON.parse(await readFile(`${__dirname}/package.json`, 'utf-8'));
+const packageJson = JSON.parse(await readFile(`${import.meta.dirname}/package.json`, 'utf-8'));
 
 const program = new Command(packageJson.name)
   .version(packageJson.version, '-v, --version', 'Output the current version of create-velocity-app.')
